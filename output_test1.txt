@@ -1,0 +1,6 @@
+Исходная строка:
+this is my 1 test. I am 18 years old. Of course I am a man.
+
+
+После преобразования:
+this is my I test. I am IVIII years old. Of course I am a man.

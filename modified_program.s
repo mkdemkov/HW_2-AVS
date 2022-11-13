@@ -176,7 +176,7 @@ generate:
 	.size	generate, .-generate
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
-.LC0:
+.LC0: # одно из сообщений об ошибке
 	.string	"\320\244\320\276\321\200\320\274\320\260\321\202 \320\262\320\262\320\276\320\264\320\260 \320\270\320\267 \320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\276\320\271 \321\201\321\202\321\200\320\276\320\272\320\270 \320\264\320\276\320\273\320\266\320\265\320\275 \320\261\321\213\321\202\321\214 \320\233\320\230\320\221\320\236: program_file -d input_file output_file"
 	.align 8
 .LC1:
@@ -236,7 +236,7 @@ main:
 .L42:
 	mov	rsi, r13
 	mov	rdi, r12
-	mov	DWORD PTR 8[rsp], 0
+	mov	DWORD PTR 8[rsp], 0 # передаем параметр
 	call	strcmp@PLT
 	test	eax, eax
 	jne	.L44
@@ -261,8 +261,8 @@ main:
 	mov	rdx, r12
 	mov	rdi, r13
 	mov	DWORD PTR 12[rsp], 0
-	mov	ecx, r15d
-	call	solve_task
+	mov	ecx, r15d # передаем параметры
+	call	solve_task # вызов функции
 	lea	rsi, .LC5[rip]
 	mov	rdi, r14
 	call	fopen@PLT
@@ -277,7 +277,7 @@ main:
 	mov	rdx, rbp
 	mov	rsi, r12
 	mov	edi, r15d
-	call	print
+	call	print # вызов функции
 	mov	rcx, rbp
 	mov	edx, 43
 	mov	esi, 1
